@@ -9,7 +9,7 @@ export default function Products({}: Props) {
     <div>
         <input type="file" onChange={async(e)=>{
             const fd=new FormData();
-            fd.append("file",e.target.files[0])
+            fd.append("file",e.target.files![0])
             const data = await axios.post(`http://localhost:8085/api/save`, fd)
             setimages([...images,data.data[0]])
         }} />
@@ -21,6 +21,9 @@ export default function Products({}: Props) {
                     </div>
                 ))
             }
+        </div>
+        <div>
+            Heman 
         </div>
     </div>
   )
